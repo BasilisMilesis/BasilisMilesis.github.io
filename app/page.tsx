@@ -1,0 +1,143 @@
+export default function Page() {
+  return (
+    <main>
+      {/* Mobile Layout */}
+      <div className="flex flex-col items-center justify-center min-h-screen text-center p-8 lg:hidden">
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent glow-effect">
+          Vasilis Milesis
+        </h1>
+        <p className="text-blue-200 text-lg mt-2 mb-10 font-medium">Software Developer</p>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-20">
+          {/* GitHub */}
+          <a
+            href="https://github.com/BasilisMilesis"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-btn w-12 h-12 flex items-center justify-center bg-gray-800/70 hover:bg-gray-700/90 rounded-full border border-gray-700/50"
+            aria-label="GitHub"
+          >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 98 96" aria-hidden="true">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+              />
+            </svg>
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/vasilis-milesis-7434b2308/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-btn w-12 h-12 flex items-center justify-center bg-gray-800/70 hover:bg-gray-700/90 rounded-full border border-gray-700/50"
+            aria-label="LinkedIn"
+          >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 382 382" aria-hidden="true">
+              <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z" />
+            </svg>
+          </a>
+
+          {/* Resume */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-btn flex items-center gap-2 px-4 py-3 bg-gray-800/70 hover:bg-gray-700/90 rounded-3xl border border-gray-700/50"
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              ></path>
+              <path d="M8 12H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
+              <path d="M8 8H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
+              <path d="M8 16H13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
+            </svg>
+            <span className="text-sm font-medium">Resume</span>
+          </a>
+        </div>
+
+        <p className="text-slate-300 text-base leading-relaxed max-w-md">
+          I am an undergraduate student at the NKUOA, pursuing a degree in Computer Science. I have a strong passion for software
+          development and cybersecurity. My goal is to create efficient, scalable solutions and continuously learn new technologies to
+          solve challenging problems.
+        </p>
+      </div>
+
+      {/* Desktop Layout */}
+      <div className="hidden lg:flex flex-row items-center justify-between p-12 max-w-6xl mx-auto min-h-screen gap-12">
+        {/* Left */}
+        <div className="flex-1">
+          <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-2 glow-effect">
+            Vasilis Milesis
+          </h1>
+          <p className="text-2xl text-blue-200 mb-6 font-medium">Software Developer</p>
+
+          <div className="flex gap-4">
+            {/* GitHub */}
+            <a
+              href="https://github.com/BasilisMilesis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-btn w-12 h-12 flex items-center justify-center bg-gray-800/70 hover:bg-gray-700/90 rounded-full border border-gray-700/50"
+              aria-label="GitHub"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 98 96" aria-hidden="true">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+                />
+              </svg>
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/vasilis-milesis-7434b2308/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-btn w-12 h-12 flex items-center justify-center bg-gray-800/70 hover:bg-gray-700/90 rounded-full border border-gray-700/50"
+              aria-label="LinkedIn"
+            >
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 382 382" aria-hidden="true">
+                <path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z" />
+            </svg>
+            </a>
+
+            {/* Resume */}
+            <a
+              href="resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-btn flex items-center gap-2 px-4 py-3 bg-gray-800/70 hover:bg-gray-700/90 rounded-3xl border border-gray-700/50"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                ></path>
+                <path d="M8 12H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
+                <path d="M8 8H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
+                <path d="M8 16H13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
+              </svg>
+              <span className="text-sm font-medium">Resume</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Right */}
+        <div className="flex-1">
+          <p className="text-lg text-slate-300 leading-relaxed font-light tracking-wide">
+            I am an undergraduate student at the NKUOA, pursuing a degree in Computer Science. I have a strong passion for software
+            development and cybersecurity. My goal is to create efficient, scalable solutions and continuously learn new technologies to
+            solve challenging problems.
+          </p>
+        </div>
+      </div>
+    </main>
+  );
+}
