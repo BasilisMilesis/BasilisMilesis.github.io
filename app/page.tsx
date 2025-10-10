@@ -90,11 +90,12 @@ const SkillCard = ({ title, skills, gradientFrom, gradientTo, iconPath }: {
   </div>
 );
 
-const ProjectCard = ({ title, status, description, techs }: {
+const ProjectCard = ({ title, status, description, techs, github }: {
   title: string;
   status: { text: string; color: string };
   description: string;
   techs: string[];
+  github: string;
 }) => (
   <div className="group p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 hover:transform hover:-translate-y-2 transition-all duration-300 backdrop-blur-sm overflow-hidden">
     <div className="flex items-center justify-between mb-6">
@@ -110,10 +111,18 @@ const ProjectCard = ({ title, status, description, techs }: {
       ))}
     </div>
     <div className="flex gap-4">
-      <a href="#" className="text-blue-300 hover:text-blue-200 text-sm font-medium transition-colors">
+      <a href="" className="text-blue-300 hover:text-blue-200 text-sm font-medium transition-colors">
         {title === 'Portfolio Website' ? 'You\'re here! →' : ''}
       </a>
-      <a href="#" className="text-blue-300 hover:text-blue-200 text-sm font-medium transition-colors">GitHub →</a>
+      {github ? (
+        <a href={github} target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 text-sm font-medium transition-colors">
+          GitHub →
+        </a>
+      ) : (
+        <span className="text-slate-500 text-sm font-medium">
+          GitHub (coming soon)
+        </span>
+      )}
     </div>
     <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-blue-500/10 to-purple-500/10 -rotate-12 origin-bottom-right opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
   </div>
@@ -207,13 +216,15 @@ export default function Page() {
       title: 'Bidding Platform',
       status: { text: 'Completed', color: 'bg-green-500/20 text-green-200' },
       description: 'Full-stack bidding application with user authentication, bidding system, payment integration, and admin dashboard. Built with React, SpringBoot, and MySQL with REST APIs for secure transactions.',
-      techs: ['React', 'Tailwind CSS', 'SpringBoot', 'MySQL', 'REST API']
+      techs: ['React', 'Tailwind CSS', 'SpringBoot', 'MySQL', 'REST API'],
+      github: ''
     },
     {
       title: 'Portfolio Website',
       status: { text: 'Completed', color: 'bg-green-500/20 text-green-200' },
       description: 'This responsive portfolio website built with modern web technologies, optimized for performance and accessibility. Features smooth animations, dark/light mode, and mobile-first design principles.',
-      techs: ['Next.js', 'Tailwind CSS', 'TypeScript', 'React']
+      techs: ['Next.js', 'Tailwind CSS', 'TypeScript', 'React'],
+      github: 'https://github.com/BasilisMilesis/BasilisMilesis.github.io'
     }
   ];
 
