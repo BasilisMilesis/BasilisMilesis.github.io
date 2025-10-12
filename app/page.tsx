@@ -31,7 +31,7 @@ const Icon = ({ path, className = "w-5 h-5" }: { path: string; className?: strin
 
 const socialLinks = [
   { href: "https://github.com/BasilisMilesis", label: "GitHub", icon: <GitHubIcon /> },
-  { href: "https://www.linkedin.com/in/vasilis-milesis-7434b2308/", label: "LinkedIn", icon: <LinkedInIcon /> },
+  { href: "https://www.linkedin.com/in/vasilis-milesis", label: "LinkedIn", icon: <LinkedInIcon /> },
   { href: "/resume.pdf", label: "Resume", icon: <ResumeIcon />, isButton: true }
 ];
 
