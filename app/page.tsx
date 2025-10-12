@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
 
 const GitHubIcon = () => (
   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 98 96" aria-hidden="true">
@@ -113,9 +113,11 @@ const ProjectCard = ({ title, status, description, techs, github }: {
       ))}
     </div>
     <div className="flex flex-wrap gap-3 sm:gap-4">
-      <a href="" className="text-blue-300 hover:text-blue-200 text-xs sm:text-sm font-medium transition-colors">
-        {title === 'Portfolio Website' ? 'You\'re here! →' : ''}
-      </a>
+      {title === 'Portfolio Website' &&
+        <a href="" className="text-blue-300 hover:text-blue-200 text-xs sm:text-sm font-medium transition-colors">
+          You&apos;re here! →
+        </a>
+      }
       {github ? (
         <a href={github} target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 text-xs sm:text-sm font-medium transition-colors">
           GitHub →
@@ -154,40 +156,7 @@ const FeatureItem = ({ icon, text, bgColor }: { icon: string; text: string; bgCo
 );
 
 export default function Page() {
-  const [activeSection, setActiveSection] = useState('about');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['about', 'skills', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
+  const sections = ['about', 'skills', 'projects', 'contact'];
 
   const skillsData = [
     {
@@ -240,27 +209,7 @@ export default function Page() {
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 py-4 md:py-8">
-        <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <div className="flex justify-center">
-            <div className="inline-flex h-10 sm:h-12 items-center justify-center rounded-full bg-gray-900/20 backdrop-blur-md p-1 border border-gray-700/30 shadow-xl">
-              {['about', 'skills', 'projects', 'contact'].map((section) => (
-                <button
-                  key={section}
-                  onClick={() => scrollToSection(section)}
-                  className={`inline-flex items-center justify-center whitespace-nowrap rounded-full px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium transition-all duration-300 capitalize ${
-                    activeSection === section 
-                      ? 'bg-gray-600/30 text-white shadow-lg backdrop-blur-sm' 
-                      : 'text-gray-400 hover:bg-gray-800/30 hover:text-gray-200'
-                  }`}
-                >
-                  {section}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar sections={sections} />
 
       {/* Hero Section */}
       <section id="about" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 pt-24 sm:pt-20 pb-10 relative">
