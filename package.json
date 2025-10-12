@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack && touch docs/.nojekyll",
+    "build": "next build --turbopack",
+    "deploy": "next build --turbopack && touch out/.nojekyll && gh-pages -d out --dotfiles",
     "start": "next start",
     "lint": "eslint"
   },
@@ -22,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4.1.13",
     "typescript": "^5"
   }
