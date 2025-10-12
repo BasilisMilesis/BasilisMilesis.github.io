@@ -43,15 +43,17 @@ const SocialLinks = ({ className }: { className?: string }) => (
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:scale-110 ${
+        className={`flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 hover:scale-110 active:scale-95 ${
           link.isButton 
-            ? 'gap-3 px-6 py-3 bg-gradient-to-r bg-gray-800/80 hover:bg-gray-700/90 text-white rounded-full shadow-lg hover:shadow-xl font-medium'
-            : 'w-14 h-14 bg-gray-800/80 text-gray-300 hover:bg-gray-700/90 rounded-full border border-gray-700/50'
+            ? 'gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r bg-gray-800/80 hover:bg-gray-700/90 text-white rounded-full shadow-lg hover:shadow-xl font-medium text-sm sm:text-base'
+            : 'w-12 h-12 sm:w-14 sm:h-14 bg-gray-800/80 text-gray-300 hover:bg-gray-700/90 rounded-full border border-gray-700/50'
         }`}
         aria-label={link.label}
       >
-        {link.icon}
-        {link.isButton && <span>{link.label}</span>}
+        <span className={link.isButton ? 'w-5 h-5 sm:w-6 sm:h-6' : ''}>
+          {link.icon}
+        </span>
+        {link.isButton && <span className="whitespace-nowrap">{link.label}</span>}
       </a>
     ))}
   </div>
@@ -64,12 +66,12 @@ const SkillCard = ({ title, skills, gradientFrom, gradientTo, iconPath }: {
   gradientTo: string;
   iconPath: string;
 }) => (
-  <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 hover:transform hover:-translate-y-2 transition-all duration-300 backdrop-blur-sm">
-    <div className="flex items-center mb-6">
-      <div className={`w-12 h-12 bg-gradient-to-r ${gradientFrom} ${gradientTo} rounded-xl flex items-center justify-center mr-4`}>
-        <Icon path={iconPath} className="w-6 h-6 text-white" />
+  <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 hover:transform hover:-translate-y-2 transition-all duration-300 backdrop-blur-sm">
+    <div className="flex items-center mb-4 sm:mb-6">
+      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${gradientFrom} ${gradientTo} rounded-xl flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0`}>
+        <Icon path={iconPath} className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
       </div>
-      <h4 className={`text-xl md:text-2xl font-semibold ${title === 'Frontend' ? 'text-blue-300' : title === 'Backend' ? 'text-green-300' : 'text-purple-300'}`}>
+      <h4 className={`text-lg sm:text-xl md:text-2xl font-semibold ${title === 'Frontend' ? 'text-blue-300' : title === 'Backend' ? 'text-green-300' : 'text-purple-300'}`}>
         {title}
       </h4>
     </div>
@@ -77,7 +79,7 @@ const SkillCard = ({ title, skills, gradientFrom, gradientTo, iconPath }: {
       {skills.map((skill) => (
         <span 
           key={skill} 
-          className={`px-4 py-2 rounded-full text-sm border ${
+          className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm border ${
             title === 'Frontend' ? 'bg-blue-500/20 text-blue-200 border-blue-500/30' :
             title === 'Backend' ? 'bg-green-500/20 text-green-200 border-green-500/30' :
             'bg-purple-500/20 text-purple-200 border-purple-500/30'
@@ -97,29 +99,29 @@ const ProjectCard = ({ title, status, description, techs, github }: {
   techs: string[];
   github: string;
 }) => (
-  <div className="group p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 hover:transform hover:-translate-y-2 transition-all duration-300 backdrop-blur-sm overflow-hidden">
-    <div className="flex items-center justify-between mb-6">
-      <h4 className="text-xl md:text-2xl font-semibold text-blue-300 group-hover:text-blue-200 transition-colors">{title}</h4>
-      <span className={`px-3 py-1 ${status.color} rounded-full text-xs font-medium`}>{status.text}</span>
+  <div className="group p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 hover:transform hover:-translate-y-2 transition-all duration-300 backdrop-blur-sm overflow-hidden">
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
+      <h4 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-300 group-hover:text-blue-200 transition-colors">{title}</h4>
+      <span className={`px-3 py-1 ${status.color} rounded-full text-xs font-medium self-start sm:self-auto`}>{status.text}</span>
     </div>
-    <p className="text-slate-400 mb-6 leading-relaxed text-base">{description}</p>
-    <div className="flex flex-wrap gap-2 mb-6">
+    <p className="text-slate-400 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">{description}</p>
+    <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
       {techs.map((tech) => (
-        <span key={tech} className="px-3 py-1 bg-blue-500/20 text-blue-200 rounded-full text-sm border border-blue-500/30">
+        <span key={tech} className="px-2.5 sm:px-3 py-1 bg-blue-500/20 text-blue-200 rounded-full text-xs sm:text-sm border border-blue-500/30">
           {tech}
         </span>
       ))}
     </div>
-    <div className="flex gap-4">
-      <a href="" className="text-blue-300 hover:text-blue-200 text-sm font-medium transition-colors">
+    <div className="flex flex-wrap gap-3 sm:gap-4">
+      <a href="" className="text-blue-300 hover:text-blue-200 text-xs sm:text-sm font-medium transition-colors">
         {title === 'Portfolio Website' ? 'You\'re here! →' : ''}
       </a>
       {github ? (
-        <a href={github} target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 text-sm font-medium transition-colors">
+        <a href={github} target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 text-xs sm:text-sm font-medium transition-colors">
           GitHub →
         </a>
       ) : (
-        <span className="text-slate-500 text-sm font-medium">
+        <span className="text-slate-500 text-xs sm:text-sm font-medium">
           GitHub (coming soon)
         </span>
       )}
@@ -238,15 +240,15 @@ export default function Page() {
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 py-8">
-        <div className="max-w-6xl mx-auto px-8">
+      <nav className="fixed top-0 left-0 right-0 z-50 py-4 md:py-8">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           <div className="flex justify-center">
-            <div className="inline-flex h-12 items-center justify-center rounded-full bg-gray-900/20 backdrop-blur-md p-1 border border-gray-700/30 shadow-xl">
+            <div className="inline-flex h-10 sm:h-12 items-center justify-center rounded-full bg-gray-900/20 backdrop-blur-md p-1 border border-gray-700/30 shadow-xl">
               {['about', 'skills', 'projects', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`inline-flex items-center justify-center whitespace-nowrap rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 capitalize ${
+                  className={`inline-flex items-center justify-center whitespace-nowrap rounded-full px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium transition-all duration-300 capitalize ${
                     activeSection === section 
                       ? 'bg-gray-600/30 text-white shadow-lg backdrop-blur-sm' 
                       : 'text-gray-400 hover:bg-gray-800/30 hover:text-gray-200'
@@ -261,22 +263,22 @@ export default function Page() {
       </nav>
 
       {/* Hero Section */}
-      <section id="about" className="min-h-[80vh] flex items-center justify-center px-8 pt-20 pb-10 relative">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent glow-effect mb-4">
+      <section id="about" className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 pt-24 sm:pt-20 pb-10 relative">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+            <div className="flex-1 text-center lg:text-left w-full">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent glow-effect mb-3 sm:mb-4 leading-tight">
                 Vasilis Milesis
               </h1>
-              <p className="text-xl md:text-2xl lg:text-3xl text-blue-200 font-medium mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-blue-200 font-medium mb-6 sm:mb-8">
                 Software Developer
               </p>
-              <SocialLinks className="flex justify-center lg:justify-start gap-4" />
+              <SocialLinks className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4" />
             </div>
             
-            <div className="flex-1">
-              <div className="text-slate-300 leading-relaxed text-base md:text-lg">
-                <p className="mb-6">
+            <div className="flex-1 w-full">
+              <div className="text-slate-300 leading-relaxed text-sm sm:text-base md:text-lg">
+                <p className="mb-4 sm:mb-6">
                   I am an undergraduate student at the NKUOA, pursuing my degree in Computer Science. I have a strong passion for software
                   development and cybersecurity. My goal is to create efficient, scalable solutions and continuously learn new technologies to
                   solve challenging problems.
@@ -291,12 +293,12 @@ export default function Page() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="min-h-[60vh] px-8 py-12 relative">
+      <section id="skills" className="min-h-[60vh] px-4 sm:px-6 md:px-8 py-12 sm:py-16 relative">
         <div className="max-w-6xl mx-auto w-full text-slate-300">
-          <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Skills & Technologies
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
             {skillsData.map((skill) => (
               <SkillCard key={skill.title} {...skill} />
             ))}
@@ -305,12 +307,12 @@ export default function Page() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="min-h-[70vh] px-8 py-12 relative">
+      <section id="projects" className="min-h-[70vh] px-4 sm:px-6 md:px-8 py-12 sm:py-16 relative">
         <div className="max-w-6xl mx-auto w-full text-slate-300">
-          <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Featured Projects
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {projectsData.map((project) => (
               <ProjectCard key={project.title} {...project} />
             ))}
@@ -319,19 +321,19 @@ export default function Page() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-[60vh] px-8 py-12 relative">
+      <section id="contact" className="min-h-[60vh] px-4 sm:px-6 md:px-8 py-12 sm:py-16 relative">
         <div className="max-w-6xl mx-auto w-full text-slate-300">
-          <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Get In Touch
           </h3>
           <div className="max-w-4xl mx-auto">
-            <p className="mb-12 text-base md:text-lg text-center leading-relaxed max-w-3xl mx-auto">
+            <p className="mb-8 sm:mb-12 text-sm sm:text-base md:text-lg text-center leading-relaxed max-w-3xl mx-auto px-4">
               Right now I&apos;m searching for an internship in software development or cybersecurity. If you are interested in working with me, please reach out!
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 backdrop-blur-sm">
-                <h4 className="text-xl md:text-2xl font-semibold text-blue-300 mb-6">Contact Information</h4>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 backdrop-blur-sm">
+                <h4 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-300 mb-4 sm:mb-6">Contact Information</h4>
                 <div className="space-y-4">
                   <ContactInfo 
                     icon="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
@@ -349,14 +351,14 @@ export default function Page() {
                     value="EET (UTC+2)"
                   />
                 </div>
-                <div className="mt-8 pt-6 border-t border-gray-700/50">
-                  <p className="text-sm text-slate-400">Response time: Usually within 24 hours</p>
+                <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-700/50">
+                  <p className="text-xs sm:text-sm text-slate-400">Response time: Usually within 24 hours</p>
                 </div>
               </div>
               
-              <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 backdrop-blur-sm">
-                <h4 className="text-xl md:text-2xl font-semibold text-blue-300 mb-6">Let&apos;s Connect</h4>
-                <p className="mb-6 text-slate-300 leading-relaxed">
+              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 backdrop-blur-sm">
+                <h4 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-300 mb-4 sm:mb-6">Let&apos;s Connect</h4>
+                <p className="mb-4 sm:mb-6 text-slate-300 leading-relaxed text-sm sm:text-base">
                   My passion lies in building innovative solutions and exploring the frontiers of technology. 
                   If you&apos;re creating something amazing and need a dedicated full-time developer for your team, either on-site or remote, please reach out.
                 </p>
@@ -371,14 +373,14 @@ export default function Page() {
             </div>
             
             <div className="text-center">
-              <SocialLinks className="flex justify-center gap-4" />
+              <SocialLinks className="flex flex-wrap justify-center gap-3 sm:gap-4" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 text-center text-slate-500 text-sm border-t border-gray-800/50">
+      <footer className="py-6 sm:py-8 text-center text-slate-500 text-xs sm:text-sm border-t border-gray-800/50 px-4">
         <p>© 2025 Vasilis Milesis. All rights reserved.</p>
       </footer>
     </main>

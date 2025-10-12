@@ -6,8 +6,5 @@ package-lock.json
 /.next
 /out
 
-# production
-/build
-
 # typescript
 next-env.d.ts
