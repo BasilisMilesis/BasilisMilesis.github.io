@@ -188,7 +188,7 @@ export default function Page() {
       status: { text: 'Completed', color: 'bg-green-500/20 text-green-200' },
       description: 'Full-stack bidding application with user authentication, bidding system, payment integration, and admin dashboard. Built with React, SpringBoot, and MySQL with REST APIs for secure transactions.',
       techs: ['React', 'Tailwind CSS', 'SpringBoot', 'MySQL', 'REST API'],
-      github: ''
+      github: 'https://github.com/BasilisMilesis/MegaBid'
     },
     {
       title: 'Portfolio Website',
