@@ -15,7 +15,12 @@ export default function SkillCard({ title, skills, gradientFrom, gradientTo, ico
         <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-r ${gradientFrom} ${gradientTo} rounded-xl flex items-center justify-center mr-3 sm:mr-4 shrink-0`}>
           <Icon path={iconPath} className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </div>
-        <h4 className={`text-lg sm:text-xl md:text-2xl font-semibold ${title === 'Frontend' ? 'text-blue-300' : title === 'Backend' ? 'text-green-300' : 'text-purple-300'}`}>
+        <h4 className={`text-lg sm:text-xl md:text-2xl font-semibold ${
+          title === 'Frontend' ? 'text-blue-300' : 
+          title === 'Backend' ? 'text-green-300' : 
+          title === 'Programming Languages' ? 'text-pink-300' : 
+          'text-purple-300'
+        }`}>
           {title}
         </h4>
       </div>
@@ -26,6 +31,7 @@ export default function SkillCard({ title, skills, gradientFrom, gradientTo, ico
             className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm border ${
               title === 'Frontend' ? 'bg-blue-500/20 text-blue-200 border-blue-500/30' :
               title === 'Backend' ? 'bg-green-500/20 text-green-200 border-green-500/30' :
+              title === 'Programming Languages' ? 'bg-pink-500/20 text-pink-200 border-pink-500/30' :
               'bg-purple-500/20 text-purple-200 border-purple-500/30'
             }`}
           >
