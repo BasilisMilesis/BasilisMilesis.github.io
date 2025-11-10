@@ -1,4 +1,5 @@
 import { GitHubIcon } from './Icons';
+import Image from 'next/image';
 
 interface ProjectCardProps {
   title: string;
@@ -17,12 +18,13 @@ export default function ProjectCard({ title, status, description, techs, github,
       <div className="absolute inset-0 bg-linear-to-br from-blue-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-blue-500/5 group-hover:via-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500 pointer-events-none"></div>
       
       {/* Image container with overlay effect */}
-      <div className="relative mb-4 sm:mb-6 mx-0 mt-0 overflow-hidden">
+      <div className="relative mb-4 sm:mb-6 mx-0 mt-0 overflow-hidden h-48 sm:h-56">
         <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-500"></div>
-        <img 
+        <Image 
           src={image} 
           alt={title} 
-          className="w-full object-top h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+          fill
+          className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
         />
       </div>
 

@@ -14,13 +14,20 @@ interface Feature {
   bgColor: string;
 }
 
+interface SocialLink {
+  href: string;
+  label: string;
+  type: 'github' | 'linkedin' | 'resume';
+  isButton?: boolean;
+}
+
 interface ContactSectionProps {
   contactMessage: string;
   connectMessage: string;
   contactInfoItems: ContactInfoItem[];
   features: Feature[];
   responseTime: string;
-  socialLinks: any[];
+  socialLinks: SocialLink[];
 }
 
 export default function ContactSection({ contactMessage, connectMessage, contactInfoItems, features, responseTime, socialLinks }: ContactSectionProps) {
