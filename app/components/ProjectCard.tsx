@@ -5,11 +5,19 @@ interface ProjectCardProps {
   techs: string[];
   github: string;
   isCurrentSite?: boolean;
+  image: string;
 }
 
-export default function ProjectCard({ title, status, description, techs, github, isCurrentSite }: ProjectCardProps) {
+export default function ProjectCard({ title, status, description, techs, github, isCurrentSite, image }: ProjectCardProps) {
   return (
     <div className="group p-6 sm:p-8 rounded-2xl bg-linear-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 hover:transform hover:-translate-y-2 transition-all duration-300 backdrop-blur-sm overflow-hidden">
+      <div className="mb-4 sm:mb-6 -mx-6 sm:-mx-8 -mt-6 sm:-mt-8">
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full object-top h-48 sm:h-56 object-cover"
+        />
+      </div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
         <h4 className="text-lg sm:text-xl md:text-2xl font-semibold text-blue-300 group-hover:text-blue-200 transition-colors">{title}</h4>
         <span className={`px-3 py-1 ${status.color} rounded-full text-xs font-medium self-start sm:self-auto`}>{status.text}</span>
@@ -38,7 +46,6 @@ export default function ProjectCard({ title, status, description, techs, github,
           </span>
         )}
       </div>
-      <div className="absolute top-0 right-0 w-16 h-16 bg-linear-to-br from-blue-500/10 to-purple-500/10 -rotate-12 origin-bottom-right opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 }

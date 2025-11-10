@@ -68,7 +68,8 @@ export const projectsData = [
     description: 'Full-stack bidding application with user authentication, bidding system, payment integration, and admin dashboard. Built with React, SpringBoot, and MySQL with REST APIs for secure transactions.',
     techs: ['React', 'Tailwind CSS', 'SpringBoot', 'MySQL', 'REST API'],
     github: 'https://github.com/BasilisMilesis/MegaBid',
-    isCurrentSite: false
+    isCurrentSite: false,
+    image: '/megabid.png'
   },
   {
     title: 'Portfolio Website',
@@ -76,7 +77,8 @@ export const projectsData = [
     description: 'This responsive portfolio website built with modern web technologies, optimized for performance and accessibility. Features smooth animations, dark/light mode, and mobile-first design principles.',
     techs: ['Next.js', 'Tailwind CSS', 'TypeScript', 'React'],
     github: 'https://github.com/BasilisMilesis/BasilisMilesis.github.io',
-    isCurrentSite: true
+    isCurrentSite: true,
+    image: '/portfolio.png'
   }
 ];
 
