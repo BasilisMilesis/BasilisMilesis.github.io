@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, status, description, techs, github, isCurrentSite, image }: ProjectCardProps) {
   return (
-    <div className="group relative rounded-2xl bg-linear-to-br from-gray-800/90 to-gray-900/90 border border-gray-700/50 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+    <div className="group relative rounded-2xl bg-linear-to-br from-gray-800/90 to-gray-900/90 border border-gray-700/50 hover:border-blue-600/25 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-500 backdrop-blur-sm overflow-hidden">
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 bg-linear-to-br from-blue-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-blue-500/5 group-hover:via-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500 pointer-events-none"></div>
       
@@ -39,7 +39,7 @@ export default function ProjectCard({ title, status, description, techs, github,
           {techs.map((tech) => (
             <span 
               key={tech} 
-              className="px-3 py-1.5 bg-linear-to-r from-blue-500/20 to-purple-500/20 text-blue-200 rounded-lg text-xs sm:text-sm border border-blue-400/30 hover:border-blue-400/60 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 shadow-sm"
+              className="px-3 py-1.5 bg-linear-to-r from-blue-500/20 to-purple-500/20 text-blue-200 rounded-full text-xs sm:text-sm border border-blue-400/30 hover:border-blue-400/60 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 shadow-sm"
             >
               {tech}
             </span>
@@ -50,7 +50,7 @@ export default function ProjectCard({ title, status, description, techs, github,
           {isCurrentSite && (
             <a 
               href="" 
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 hover:text-blue-200 text-xs sm:text-sm font-semibold transition-all duration-300 rounded-lg border border-blue-500/30 hover:border-blue-500/50"
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 hover:text-blue-200 text-xs sm:text-sm font-semibold transition-all duration-300 rounded-2xl border border-blue-500/30 hover:border-blue-500/50"
             >
               You&apos;re here!
             </a>
@@ -60,7 +60,7 @@ export default function ProjectCard({ title, status, description, techs, github,
               href={github} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700/30 hover:bg-gray-700/50 text-gray-300 hover:text-white text-xs sm:text-sm font-semibold transition-all duration-300 rounded-lg border border-gray-600/50 hover:border-gray-500/70"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700/30 hover:bg-gray-700/50 text-gray-300 hover:text-white text-xs sm:text-sm font-semibold transition-all duration-300 rounded-2xl border border-gray-600/50 hover:border-gray-500/70"
             >
               <GitHubIcon />
               <span>View on GitHub</span>

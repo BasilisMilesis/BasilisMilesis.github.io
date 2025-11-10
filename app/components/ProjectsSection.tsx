@@ -7,6 +7,7 @@ interface Project {
   techs: string[];
   github: string;
   isCurrentSite?: boolean;
+  image: string;
 }
 
 interface ProjectsSectionProps {
