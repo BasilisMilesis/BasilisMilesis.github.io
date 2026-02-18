@@ -79,6 +79,15 @@ export const projectsData = [
     image: '/megabid.png'
   },
   {
+    title: 'Hash Join Optimization',
+    status: { text: 'Completed', color: 'bg-green-500/20 text-green-200' },
+    description: 'High-performance multithreaded hash join implementation in C++ for the SIGMOD Programming Contest. Implemented a parallel partitioned join with cache-efficient design and minimal synchronization, achieving a 98% speedup over baseline. Developed in a collaborative, CI-driven workflow using GitHub Actions and PRs.',
+    techs: ['C++', 'Github', 'Multithreading'],
+    github: '',
+    isCurrentSite: false,
+    image: '/join.png'
+  },
+  {
     title: 'Portfolio Website',
     status: { text: 'Completed', color: 'bg-green-500/20 text-green-200' },
     description: 'This responsive portfolio website built with modern web technologies, optimized for performance and accessibility. Features smooth animations, dark/light mode, and mobile-first design principles.',
