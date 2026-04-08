@@ -83,7 +83,7 @@ export const projectsData = [
     status: { text: 'Completed', color: 'bg-green-500/20 text-green-200' },
     description: 'High-performance multithreaded hash join implementation in C++ for the SIGMOD Programming Contest. Implemented a parallel partitioned join with cache-efficient design and minimal synchronization, achieving a 98% speedup over baseline. Developed in a collaborative, CI-driven workflow using GitHub Actions and PRs.',
     techs: ['C++', 'Github', 'Multithreading'],
-    github: '',
+    github: 'https://github.com/BasilisMilesis/SIGMOD-2025',
     isCurrentSite: false,
     image: '/join.png'
   },
